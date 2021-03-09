@@ -26,7 +26,7 @@ using System.Text.Encodings.Web;
 
         public string Welcome()
             {
-                return "This is the Welcome action method...";
+                return "Это стандартный метод Welcom из HelloWorldController...";
             }
         }
 
