@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelloMVC.Migrations
 {
     [DbContext(typeof(HelloMVCContext))]
-    [Migration("20210309144918_InitialCreate")]
+    [Migration("20210309151813_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
