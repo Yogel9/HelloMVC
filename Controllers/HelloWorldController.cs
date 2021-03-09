@@ -12,18 +12,19 @@ using System.Text.Encodings.Web;
     
         public class HelloWorldController : Controller
         {
-            // 
-            // GET: /HelloWorld/
+        // 
+        // GET: /HelloWorld/
 
-            public string Index()
-            {
-                return "This is my default action...";
-            }
+       
+        public IActionResult Index()//ВЫЗЫВАЕМ ИДЕКС ИЗ VIEWS ПАПКИ
+        {
+            return View();
+        }
 
-            // 
-            // GET: /HelloWorld/Welcome/ 
+        // 
+        // GET: /HelloWorld/Welcome/ 
 
-            public string Welcome()
+        public string Welcome()
             {
                 return "This is the Welcome action method...";
             }
