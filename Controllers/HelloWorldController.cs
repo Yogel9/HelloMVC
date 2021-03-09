@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
 
-    namespace HelloMVC.Controllers
-    { 
-    
-        public class HelloWorldController : Controller
-        {
+namespace HelloMVC.Controllers
+{
+
+    public class HelloWorldController : Controller
+    {
         // 
         // GET: /HelloWorld/
 
-       
+
         public IActionResult Index()//ВЫЗЫВАЕМ ИДЕКС ИЗ VIEWS ПАПКИ
         {
             return View();
@@ -23,11 +23,13 @@ using System.Text.Encodings.Web;
 
         // 
         // GET: /HelloWorld/Welcome/ 
+        //https://localhost:44324/HelloWorld/Welcome?name=Rick&numtimes=4
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
 
-        public string Welcome()
-            {
-                return "Это стандартный метод Welcom из HelloWorldController...";
-            }
+            return View();
         }
-
     }
+}
