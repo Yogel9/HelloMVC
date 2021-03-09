@@ -1,24 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-
-namespace MvcMovie.Controllers
+namespace HelloMVC.Controllers
 {
+
+
     public class HelloWorldController : Controller
     {
         // 
         // GET: /HelloWorld/
-
-        public string Index()
+        public IActionResult Index()//ВЫЗЫВАЕМ ИДЕКС ИЗ VIEWS ПАПКИ
         {
-            return "This is my default action...";
+            return View();
         }
+        //public string Index() Part2
+        //{
+        //    return "Это моё действие по умолчанию!";
+        //}
 
-        // 
+
         // GET: /HelloWorld/Welcome/ 
-        // Requires using System.Text.Encodings.Web;
-        public string Welcome(string name, int ID = 1)
+        //public string Welcome() Part2
+        //{
+        //    return "Добро пожаловать, метод Welcome работает!";
+        //}
+
+
+        //https://localhost:44324/HelloWorld/Welcome?name=Rick&numtimes=4
+        public IActionResult Welcome(string name, int numTimes = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+            return View();
         }
+
+        // GET: /HelloWorld/Welcome?name=Rick&numtimes=4    Part2
+        // Requires using System.Text.Encodings.Web;
+        //public string Welcome(string name, int numTimes = 1)
+        //{
+        //    return HtmlEncoder.Default.Encode($"Привет {name}, ваше числовое значение: {numTimes}");
+        //}
     }
 }
