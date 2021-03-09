@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using System.Text.Encodings.Web;
 namespace HelloMVC.Controllers
 {
+
 
     public class HelloWorldController : Controller
     {
@@ -38,7 +39,5 @@ namespace HelloMVC.Controllers
         //{
         //    return HtmlEncoder.Default.Encode($"Привет {name}, ваше числовое значение: {numTimes}");
         //}
-
-       
     }
 }
